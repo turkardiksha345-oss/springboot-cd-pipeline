@@ -31,7 +31,7 @@ jobs:
       - name: Update Image Tag
         run: |
           cd ${{ github.event.inputs.environment }}
-          sed -i 's|image: .*|image: dikshat1024/democicd:${{ github.event.inputs.IMAGETAG }}|g' deployment.yml
+          sed -i 's|image: .*|image: dikshat1024/democicd:${{ github.event.inputs.IMAGETAG }}|g' \  ${{ github.event.inputs.environment }} deployment.yml
 
       # 🔹 Commit changes
       - name: Commit Changes
