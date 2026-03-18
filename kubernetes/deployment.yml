@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-demo
+  labels:
+    app: my-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-demo
+  template:
+    metadata:
+      labels:
+        app: my-demo
+    spec:
+      containers:
+      - name: my-demo
+        image: dikshat1024/democicd:latest
+        ports:
+        - containerPort: 8080
